@@ -1,0 +1,41 @@
+<%- css_theme_cdn('css/kratosr.min.css', {id: "kratos-css", media:"all"}) %>
+<% if (theme.customStyles && theme.customStyles.default_color) { -%>
+    <style media="all">
+            :root{
+            <% Object.keys(theme.customStyles.default_color).forEach(function(idx){ -%>
+                --<%- idx %>: <%- theme.customStyles.default_color[idx] %>;
+            <% }) -%>
+            }
+    </style>
+<% } -%>
+
+<% if (theme.enable_dark) { %>
+  <%- css_theme_cdn('css/kr-color-dark.min.css',{ class: "darkmode-css",media: "(prefers-color-scheme: dark)"}) %>
+  <%- js_theme_cdn('js/kr-dark.min.js') %>
+  <% if (theme.customStyles && theme.customStyles.dark_color) { -%>
+    <style class="darkmode-css" media="(prefers-color-scheme: dark)">
+        :root{
+            <% Object.keys(theme.customStyles.dark_color).forEach(function(idx){ -%>
+                --<%- idx %>: <%- theme.customStyles.dark_color[idx] %>;
+            <% }) -%>
+        }
+    </style>
+  <% } -%>
+<% } %>
+
+<% if (theme.customStyles) { %>
+    <style>
+    <% if (theme.customStyles.images?.banner) { -%>
+        .kratos-cover.kratos-cover-2 {
+        background-image: url('<%- theme.customStyles.images?.banner %>');
+        }
+    <% } -%>
+    <% if (theme.customStyles.images?.background) { -%>
+        @media(min-width:768px) {
+        body.custom-background {
+            background-image: url('<%- theme.customStyles.images?.background %>');
+        }
+        }
+    <% } -%>
+    </style>
+<% } %>

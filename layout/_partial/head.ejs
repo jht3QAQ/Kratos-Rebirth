@@ -55,11 +55,7 @@
     <% } %>
   <% } %>
   <!-- 样式表文件 -->
-  <%- css_theme_cdn('css/kratosr.min.css', {id: "kratos-css", media:"all"}) %>
-  <% if (theme.enable_dark) { %>
-    <%- css_theme_cdn('css/kr-color-dark.min.css', {id: "darkmode-css", media:"(prefers-color-scheme: dark)"}) %>
-    <%- js_theme_cdn('js/kr-dark.min.js') %>
-  <% } %>
+  <%- partial('_partial/custom-style') %>
   <% if (config.highlight && config.highlight.enable !== false && theme.highlight_theme) { %>
     <%- css_theme_cdn(`css/highlight/${theme.highlight_theme || 'night-eighties'}.min.css`, {id: "highlight-css", media:"all"}) %>
   <% } %>
@@ -76,22 +72,6 @@
   <%- js_npm_cdn('jquery', 'dist/jquery.min.js') %>
   <% if (theme.posts.share) { %>
     <%- js_npm_cdn('qrcode_js', 'qrcode.min.js') %>
-  <% } %>
-  <% if (theme.customStyles) { %>
-  <style>
-    <% if (theme.customStyles.images?.banner) { %>
-      .kratos-cover.kratos-cover-2 {
-        background-image: url('<%- theme.customStyles.images?.banner %>');
-      }
-    <% } %>
-    <% if (theme.customStyles.images?.background) { %>
-      @media(min-width:768px) {
-        body.custom-background {
-          background-image: url('<%- theme.customStyles.images?.background %>');
-        }
-      }
-    <% } %>
-  </style>
   <% } %>
 </head>
 

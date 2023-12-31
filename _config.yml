@@ -50,6 +50,12 @@ customStyles:
   images: # 图片相关设置
     # banner: /images/banner.webp # 站点横幅
     # background: /images/bg.webp # 站点背景
+  default_color:
+    navbar_desktop: rgba(144,215,236,.9)
+    navbar_mobile: rgba(144,215,236,.9)
+  dark_color:
+    # navbar_desktop: rgba(144,215,236,.9)
+    # navbar_mobile: rgba(144,215,236,.9)
 
 # Index 首页配置
 index:
