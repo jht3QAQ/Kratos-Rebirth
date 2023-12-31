@@ -56,6 +56,7 @@ customStyles:
   dark_color:
     # navbar_desktop: rgba(144,215,236,.9)
     # navbar_mobile: rgba(144,215,236,.9)
+  kratos_topnav_position: fixed
 
 # Index 首页配置
 index:

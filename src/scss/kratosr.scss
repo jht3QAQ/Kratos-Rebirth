@@ -1,5 +1,7 @@
 ﻿@charset "UTF-8";
 
+@import './variable.scss';
+
 @-ms-viewport {
   width: device-width;
 }
@@ -1059,7 +1061,7 @@ table {
 
 .kratos-topnav {
   padding: 0;
-  position: fixed;
+  position: $kratos_topnav_position;
   left: 0;
   width: 100%;
   z-index: 2;

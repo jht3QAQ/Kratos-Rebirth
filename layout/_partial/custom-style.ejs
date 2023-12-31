@@ -37,5 +37,10 @@
         }
         }
     <% } -%>
+    :root{
+        <% if (theme.customStyles.kratos_topnav_position !== undefined ) { -%>
+            --kratos_topnav_position: <%- theme.customStyles.kratos_topnav_position %>;
+        <% } -%>
+    }
     </style>
 <% } %>
