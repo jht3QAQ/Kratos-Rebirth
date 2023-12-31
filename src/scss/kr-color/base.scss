@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+/*******************import color********************/
+
+$select_text: var(--select_text);
+$select_text_bg: var(--select_text_bg);
+$text: var(--text);
+$text_alt: var(--text_alt);
+$link: var(--link);
+$link_hover: var(--link_hover);
+$border: var(--border);
+$tag_background: var(--tag_background);
+$card_background: var(--card_background);
+$page_background: var(--page_background);
+$info_background: var(--info_background);
+$navbar_desktop: var(--navbar_desktop);
+$navbar_mobile: var(--navbar_mobile);
+
 /******************* Color ********************/
 @mixin selection {
     color: $select_text;
@@ -10,11 +26,11 @@
     &::-webkit-selection {
         @include selection;
     }
-    
+
     &::-moz-selection {
         @include selection;
     }
-    
+
     &::selection {
         @include selection;
     }
@@ -47,7 +63,7 @@ a {
 blockquote {
     background-color: $info_background;
     border-color: $border;
-    
+
     p {
         color: $text;
     }
@@ -65,10 +81,12 @@ table {
 }
 
 .kratos-entry-border-new {
-    a, i {
+
+    a,
+    i {
         color: $text;
     }
-    
+
     .kratos-post-meta-new {
         border-top: 1px solid $border;
         background: $tag_background;
@@ -81,7 +99,7 @@ table {
 
         p a {
             color: $link;
-    
+
             &:hover {
                 color: $link_hover;
             }
@@ -90,21 +108,27 @@ table {
 }
 
 .kratos-entry-header {
-    span, a {
+
+    span,
+    a {
         color: $text;
     }
 }
 
 ul.kratos-post-meta {
     color: $text_alt;
-    span, a {
+
+    span,
+    a {
         color: $text_alt;
     }
 }
 
 .kratos-post-content {
-    p, table td {
-    color: $text;
+
+    p,
+    table td {
+        color: $text;
     }
 }
 
@@ -140,30 +164,33 @@ ul.kratos-post-meta {
 #kratos-widget-area {
 
     .widget {
-        a, &-title i {
+
+        a,
+        &-title i {
             color: $text_alt;
         }
 
         &.widget-kratos {
-            &-about .site-meta > .meta-item:hover {
+            &-about .site-meta>.meta-item:hover {
                 background-color: $info_background;
             }
 
             &-tags {
                 .tag-clouds a {
                     background-color: $tag_background;
-            
+
                     &:hover {
                         color: $tag_background;
                         background-color: $text_alt;
                     }
                 }
             }
-        
+
             &-categories .category-list-item {
                 &::before {
                     color: $text_alt;
                 }
+
                 .category-list-count {
                     color: $text;
                     background-color: $info_background;
@@ -175,17 +202,21 @@ ul.kratos-post-meta {
 }
 
 .pagination {
-    a, span {
+
+    a,
+    span {
         background-color: $tag_background;
         color: $text;
     }
 
-    > li > a {
+    >li>a {
         background-color: $card_background;
     }
 }
 
-.kratos-hentry, .navigation div, #kratos-widget-area .widget {
+.kratos-hentry,
+.navigation div,
+#kratos-widget-area .widget {
     background-color: $card_background;
 }
 
@@ -230,7 +261,7 @@ ul.kratos-post-meta {
 }
 
 #archives .posts-collapse .post-title a,
-.categories > ul.category-list > li.category-list-item a {
+.categories>ul.category-list>li.category-list-item a {
     color: $text_alt;
 }
 
@@ -256,19 +287,19 @@ a:hover,
 }
 
 .toc-item.active>a {
-  color: $tag_background;
+    color: $tag_background;
 
-  &::before {
-    border-left-color: $tag_background;
-  }
+    &::before {
+        border-left-color: $tag_background;
+    }
 }
 
 span.blur {
-  text-shadow: 0 0 .5em $text;
+    text-shadow: 0 0 .5em $text;
 
-  &:hover {
-    color: $text!important;
-  }
+    &:hover {
+        color: $text !important;
+    }
 }
 
 /******************* Plugins ********************/
@@ -290,9 +321,11 @@ span.blur {
 
 .post-comments {
     .v[data-class=v] {
-        p, 
-        .vheader label, 
-        .veditor, .veditor::placeholder {
+
+        p,
+        .vheader label,
+        .veditor,
+        .veditor::placeholder {
             color: $text;
         }
 
@@ -312,7 +345,8 @@ span.blur {
             background-color: $tag_background;
         }
 
-        .veditor:focus, .vinput:focus {
+        .veditor:focus,
+        .vinput:focus {
             background-color: $info_background;
         }
     }
@@ -344,5 +378,5 @@ span.mjx-chtml.MJXc-display {
 }
 
 .post-comments.bg-image textarea {
-    background: $comment-background-image right bottom no-repeat!important;
+    background: $comment-background-image right bottom no-repeat !important;
 }
