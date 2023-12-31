@@ -100,6 +100,7 @@ contact: # 出于兼容性考虑，继续保留
 footerLinks: [] # 可以自定义
 timenotice: 本站已运行
 icp: 
+icp_url:
 psr:
   
 # Post Page 文章页配置
