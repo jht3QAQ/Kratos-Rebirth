@@ -5,7 +5,7 @@
  */
 // 作为直接影响渲染的脚本，应该在最开始就加载，不应该defer
 (() => {
-    const darkmodeCss = document.getElementById('darkmode-css')
+    const darkmodeCss = document.getElementsByClassName('darkmode-css')
     const darkModeStorageKey = 'user-color-scheme';
 
     /**
@@ -70,19 +70,21 @@
             removeLS(darkModeStorageKey); //reset
             currentSetting = null;
         }
-        switch (currentSetting) {
-            case "dark":
-                darkmodeCss.setAttribute('media', 'all');
-                darkmodeCss.removeAttribute('disabled');
-                break;
-            case "light":
-                darkmodeCss.setAttribute('disabled', 'disabled');
-                break;
-            default:
-                darkmodeCss.setAttribute('media', '(prefers-color-scheme: dark)');
-                darkmodeCss.removeAttribute('disabled');
-                break;
-        }
+        Array.prototype.forEach.call(darkmodeCss, function(darkmodeCss) {
+            switch (currentSetting) {
+                case "dark":
+                    darkmodeCss.setAttribute('media', 'all');
+                    darkmodeCss.removeAttribute('disabled');
+                    break;
+                case "light":
+                    darkmodeCss.setAttribute('disabled', 'disabled');
+                    break;
+                default:
+                    darkmodeCss.setAttribute('media', '(prefers-color-scheme: dark)');
+                    darkmodeCss.removeAttribute('disabled');
+                    break;
+            }
+        });
     };
 
     const invertDarkModeObj = {
